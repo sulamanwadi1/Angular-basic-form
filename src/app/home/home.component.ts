@@ -5,12 +5,14 @@ import { DataserviceService } from '../dataservice.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private router:Router, private dataser:DataserviceService) { }
   dataset;
+  constructor(private router:Router, private dataser:DataserviceService) {
+    
+   }
+  
 ngOnInit() {
   this.dataset = this.dataser.loadData()
 }
@@ -25,6 +27,8 @@ status(d){
   let statusarray = ["Not started","Queued","Running","Done"]
   return statusarray[d-1]
 }
+
+
 sortDirectionStatus:boolean = false;
 sortDirectionPriority:boolean = false;
 sortDirectionName:boolean = true;

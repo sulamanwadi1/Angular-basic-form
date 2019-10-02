@@ -28,7 +28,7 @@ export class DataserviceService {
   loadData(){
     return this.dataset;
   }
-
+  
 }
 export interface Data {
   jobid:number;
