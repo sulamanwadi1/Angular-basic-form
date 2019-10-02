@@ -1,0 +1,41 @@
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th (click)="sortData('name')">Name</th>
+                    <th>Description</th>
+                    <th (click)="sortData('status')">Status</th>
+                    <th (click)="sortData('priority')">Priority</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let data of dataset">
+                    <td>{{data.name}}</td>
+                    <td>{{data.description}}</td>
+                    <td>{{status(data.status)}}</td>
+                    <td>{{priority(data.priority)}}</td>
+                    <td><a href="javascript:;" class="btn btn-success" (click)="onSelect(data)">View Details</a></td>
+                    <td><a href="javascript:;">Edit</a> &nbsp; <a href="javascript:;">Delete</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Add Job</h2>
+    <form action="">
+        <label for="">Name</label>
+        <input type="text">
+        <label for="">Description</label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <label for="">Status</label>
+        <input type="radio" name="status">
+        <input type="radio" name="status">
+        <input type="radio" name="status">
+        <label for="">Priority</label>
+        <input type="radio" name="priority">
+        <input type="radio" name="priority">
+        <input type="radio" name="priority">
+        <input type="button" value="Submit">
+    </form>
+</section>
